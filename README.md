@@ -2,7 +2,7 @@
 
 `.editorconfig` file generator.
 
-## Docs
+## Usage
 
 The default behaviour is to generate a copy of `[default-editorconfig](default-editorconfig)`
 in the current directory.
