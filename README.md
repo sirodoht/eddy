@@ -1,6 +1,6 @@
 # eddy
 
-`.editorconfig` file generator.
+[`.editorconfig`](http://editorconfig.org/) file generator.
 
 ## Usage
 
