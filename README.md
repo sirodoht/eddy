@@ -20,7 +20,7 @@ By default, `eddy` will use `2` for [indent_size] and the current directory as [
 
 * `eddy 4`: It will generate an `.editorconfig` file with indent size of 4.
 * `eddy 8 src`: It will generate an `.editorconfig` file with indent size of 8,
-    inside the `src` directory. `NOTE:` The directory must exist beforehand.
+    inside the `src` directory. NB: The directory must exist beforehand.
 
 ## Compile
 
