@@ -4,7 +4,7 @@
 
 ## Usage
 
-The default behaviour is to generate a copy of `[default-editorconfig](default-editorconfig)`
+The default behaviour is to generate a copy of [`default-editorconfig`](default-editorconfig)
 in the current directory.
 
 Currently, you can override the `indent_size` option and the directory of the
