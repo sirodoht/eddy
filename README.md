@@ -27,7 +27,7 @@ By default, `eddy` will use `2` for [indent_size] and the current directory as [
 `eddy` is written in [Rust](https://www.rust-lang.org/).
 
 ```
-cargo build
+cargo build --release
 ```
 
 ## License
