@@ -18,21 +18,21 @@ fn main() {
     let save_path_display = save_path.display();
 
     let part_1 = "# editorconfig.org\n\
-        \n\
-        root = true\n\
-        \n\
-        [*]\n\
-        end_of_line = lf\n\
-        charset = utf-8\n\
-        trim_trailing_whitespace = true\n\
-        insert_final_newline = true\n\
-        indent_style = space\n\
-        indent_size = ";
+\n\
+root = true\n\
+\n\
+[*]\n\
+end_of_line = lf\n\
+charset = utf-8\n\
+trim_trailing_whitespace = true\n\
+insert_final_newline = true\n\
+indent_style = space\n\
+indent_size = ";
 
     let part_2 = "\n\
-        \n\
-        [*.md]\n\
-        trim_trailing_whitespace = false\n";
+\n\
+[*.md]\n\
+trim_trailing_whitespace = false\n";
 
     let contents = part_1.to_owned() + argument_spaces + part_2;
 
