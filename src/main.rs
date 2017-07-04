@@ -8,7 +8,6 @@ fn main() {
     let args: Vec<String> = env::args().collect();
 
     let argument_spaces = args.get(1).map(|x| x.as_str()).unwrap_or("2");
-
     let argument_path = args.get(2).map(|x| x.as_str()).unwrap_or(".");
 
     let file_name = "/.editorconfig";
@@ -36,16 +35,9 @@ trim_trailing_whitespace = false\n";
 
     let contents = part_1.to_owned() + argument_spaces + part_2;
 
-    let mut output_file = match File::create(&save_path) {
-        Err(error) => {
-            panic!(
-                "Could not create {}: {}",
-                save_path_display,
-                error.description()
-            )
-        }
-        Ok(file) => file,
-    };
+    let mut output_file = File::create(&save_path).unwrap_or_else(|error| {
+        panic!("Could not create {}: {}", save_path_display, error.description());
+    });
 
     output_file.write_all(contents.as_bytes()).unwrap();
 }
