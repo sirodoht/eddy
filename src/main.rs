@@ -7,26 +7,16 @@ use std::io::prelude::*;
 fn main() {
     let args: Vec<String> = env::args().collect();
 
-    let mut argument_spaces = if args.len() == 2 {
-        args[1].clone().to_string()
-    } else {
-        "2".to_string()
-    };
-
-    let argument_path = if args.len() == 3 {
-        argument_spaces = args[1].clone().to_string();
-        args[2].clone().to_string()
-    } else {
-        ".".to_string()
-    };
+    let argument_spaces = args.get(1).map(|x| x.as_str()).unwrap_or("2");
+    let argument_path = args.get(2).map(|x| x.as_str()).unwrap_or(".");
 
     let file_name = "/.editorconfig";
-    let full_path = argument_path + file_name;
+    let full_path = argument_path.to_owned() + file_name;
 
     let save_path = Path::new(&full_path);
     let save_path_display = save_path.display();
 
-    let part_1 = String::from("# editorconfig.org\n\
+    let part_1 = "# editorconfig.org\n\
 \n\
 root = true\n\
 \n\
@@ -36,14 +26,14 @@ charset = utf-8\n\
 trim_trailing_whitespace = true\n\
 insert_final_newline = true\n\
 indent_style = space\n\
-indent_size = ");
+indent_size = ";
 
-let part_2 = String::from("\n\
+    let part_2 = "\n\
 \n\
 [*.md]\n\
-trim_trailing_whitespace = false\n");
+trim_trailing_whitespace = false\n";
 
-    let contents = part_1 + &argument_spaces + &part_2;
+    let contents = part_1.to_owned() + argument_spaces + part_2;
 
     let mut output_file = File::create(&save_path).unwrap_or_else(|error| {
         panic!("Could not create {}: {}", save_path_display, error.description());

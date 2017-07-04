@@ -1,6 +1,17 @@
 # eddy
 
-[`.editorconfig`](http://editorconfig.org/) file generator.
+`.editorconfig` file generator.
+
+[EditorConfig](http://editorconfig.org/) is a way to have consistent coding styles 
+between different editors/IDEs/users. For example, EditorConfig defines the number 
+of indent spaces (or tabs) with the `indent_size` property. You can see all properties
+[here](http://editorconfig.org/#file-format-details).
+
+The editor/IDE (see supported ones [here](http://editorconfig.org/#download)) 
+reads a file named `.editorconfig` which exists in your project and enforces the
+properties defined there. This project generates this file from the shell.
+
+See more at [editorconfig.org](http://editorconfig.org/).
 
 ## Usage
 
